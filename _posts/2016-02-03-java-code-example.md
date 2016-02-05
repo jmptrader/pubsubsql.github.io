@@ -3,6 +3,7 @@ layout: post
 title: Java code example
 date: 2016-02-03 13:26:34
 active: blog
+icon: code
 author: vsimunov
 categories: code
 comments: true

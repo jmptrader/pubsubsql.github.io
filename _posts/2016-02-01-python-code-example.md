@@ -3,6 +3,7 @@ layout: post
 title: Python code example
 date: 2016-02-01 13:26:34
 active: blog
+icon: code
 author: dstrbad
 categories: python
 comments: true

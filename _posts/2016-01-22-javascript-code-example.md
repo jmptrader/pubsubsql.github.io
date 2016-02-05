@@ -3,6 +3,7 @@ layout: post
 title: Javacript code example
 date: 2016-01-15 13:26:34
 active: blog
+icon: code
 author: mnikolaus
 categories: code
 comments: true
