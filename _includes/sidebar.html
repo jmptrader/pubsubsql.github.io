@@ -1,0 +1,14 @@
+<aside class="col-md-4 sidebar">
+    <div class="sidebar-widget widget_categories">
+        <h3 class="sidebar-header">Latest blog posts</h3>
+        <ul>
+            {% for post in site.posts limit:5 %}
+                <li>
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>

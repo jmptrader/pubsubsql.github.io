@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Getting Started on Linux | PubSubSQL</title>
+        
+        <meta name="description" content=" A simple and clean responsive Jekyll theme for words and photos. ">
+        
+        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/theme.css">
+        <link rel="stylesheet" href="/assets/css/syntax.css">
+        <link rel="stylesheet" href="/assets/css/color-defaults.min.css">
+        <link rel="stylesheet" href="/assets/css/swatch-blue-white.min.css">
+        <link rel="stylesheet" href="/assets/css/swatch-white-blue.min.css">
+        <link rel="stylesheet" href="/assets/css/fonts.min.css" media="screen">
+    </head>
+    <body class="pace-on pace-dot">
+        <div class="pace-overlay swatch-blue-white"></div>
+        <header id="masthead" class="navbar navbar-sticky swatch-blue-white" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">
+
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li >
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="dropdown  active ">
+                            <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Get started</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/getting-started-on-linux">Run on Linux</a>
+                                </li>
+                                <li>
+                                    <a href="/getting-started-on-windows">Run on Windows</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Docs</a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                    <li>
+                                        <a href="/docs/dotNet">.Net Client API</a>
+                                    </li>
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                    <li>
+                                        <a href="/docs/go">Go Client API</a>
+                                    </li>
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                    <li>
+                                        <a href="/docs/java">Java Client API</a>
+                                    </li>
+                                    
+                                
+                                    
+                                
+                                    
+                                    <li>
+                                        <a href="/docs/python">Python Client API</a>
+                                    </li>
+                                    
+                                
+                                    
+                                
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li >
+                            <a href="/license">License</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="content" role="main">
+
+<section class="section swatch-blue-white">
+    <div class="container">
+        <header class="section-header logo">
+            
+            
+        </header>
+    </div>
+</section>
+<section class="section swatch-white-blue has-top">
+    <div class="decor-top">
+        <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
+        </svg>
+    </div>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+             Please ask us a question: email oleg@pubsubsql.com twitter @PubSubSQL forum groups.google.com/group/pubsubsql 
+
+Getting Started on Linux
+========================
+
+    # PubSubSQL distribution tree
+
+    pubsubsql/
+        bin/
+            pubsubsql           # server and built-in cli
+            pubsubsqlsvc        # daemon (service) installer
+            pubsubgui.jar       # interactive query java gui
+        lib/
+            pubsubsql.jar       # client api java library
+            gson-2.4.1.jar      # third party gson java library
+        samples/                # sources for samples and client api 
+            go/...                   
+            java/...
+            python/...
+
+### [Download and install the distribution]
+
+### [Test your installation]
+
+### [Run command line client (CLI)]
+
+### [Configure and run as a daemon (service)]
+
+### [Run Interactive Query gui]
+
+##### Download and install the distribution
+
+PubSubSQL x86 64-bit distribution: [pubsubsql-v1.2.0-linux-x64.tar.gz]
+
+PubSubSQL x86 32-bit distribution: [pubsubsql-v1.2.0-linux-x86.tar.gz]
+
+Download one of the above archives and extract it into /usr/local, creating a PubSubSQL tree in /usr/local/pubsubsql . For example:
+
+    $ sudo tar -C /usr/local -xzf pubsubsql-v1.1.0-linux-amd64.tar.gz.gz 
+
+To be able to run the server and the CLI from the command line without changing to the /usr/local/pubsubsql/bin directory, add /usr/local/pubsubsql/bin to the PATH environment variable. You can accomplish this by adding the following line to the end of your ~/.bashrc file:
+
+    # add to the end of ~/.bashrc file
+    export PATH=$PATH:/usr/local/pubsubsql/bin
+
+Run the following command for the changes to PATH to take effect:
+
+    $ source ~/.bashrc
+
+##### Test your installation
+
+Run the server:
+
+    $ pubsubsql
+    info: 2014/02/13 20:36:31 listening for incoming connections on  :7777 
+    info: 2014/02/13 20:36:31 started 
+
+Quit the server by typing the letter q and press enter:
+
+    q
+    info: 2014/02/11 18:01:00 stopped
+
+By default, the server listens for incoming connections on all available network interfaces and binds to the default port:7777. You may choose to specify a different port or host by using the -port and/or -ip options. For example:
+
+    $ pubsubsql -port=1234 -ip=192.168.1
+
+  [Download and install the distribution]: #download
+  [Test your installation]: #test
+  [Run command line client (CLI)]: #cli
+  [Configure and run as a daemon (service)]: #daemon
+  [Run Interactive Query gui]: #gui
+  [pubsubsql-v1.2.0-linux-x64.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x64.tar.gz/download
+  [pubsubsql-v1.2.0-linux-x86.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x86.tar.gz/download    
+        </div>
+    </div>
+</section>
+<section class="section swatch-blue-white section-small"></section>
+<section class="section swatch-white-blue">
+    <div class="container">
+        <header class="section-header no-underline text-center">
+            <h1 class="headline super hairline">Have question?</h1>
+            <p class="custom-contact">
+                <span><i class="fa fa-envelope"></i>oleg@pubsubsql.com</span>
+                <span><i class="fa fa-twitter"></i>@PubSubSQL</span>
+                <span><i class="fa fa-comment"></i>groups.google.com/group/pubsubsql</span>
+            </p>
+        </header>
+        
+    </div>
+</section>
+</div>
+<!-- end div content -->
+<footer id="footer" role="contentinfo">
+                <section class="section swatch-blue-white has-top">
+                    <div class="decor-top">
+                        <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
+                        </svg>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div id="swatch_social-2" class="sidebar-widget  widget_swatch_social">
+                                    <ul class="unstyled inline small-screen-center social-icons social-background">
+                                        <li>
+                                            <a target="_blank" href="http://groups.google.com/group/pubsubsql">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://twitter.com/PubSubSQL">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="http://www.youtube.com/PubSubSQL">
+                                                <i class="fa fa-youtube-play"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://github.com/pubsubsql">
+                                                <i class="fa fa-github"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="text-4" class="sidebar-widget widget_text col-md-8 col-md-offset-2">
+                                    <div class="textwidget">
+                                        <p>
+                                            The content of this page is licensed under the Creative Commons Attribution 3.0 License. Portions of this page are modifications from work created and <a href="http://code.google.com/policies.html" title="Google code">shared by Google</a> and used according to terms described in the <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons License">Creative Commons 3.0 Attribution License</a>. Please find the original work at <a href="http://www.golang.org/" title="golang">golang.org</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+        </div>
+        <a class="go-top hex-alt swatch-black-yellow" href="javascript:void(0)">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <script src="/assets/js/packages.min.js"></script>
+        <script src="/assets/js/theme.min.js"></script>
+    </body>
+</html>

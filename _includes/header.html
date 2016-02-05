@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{page.title}}</title>
+        {% if page.excerpt %}
+        <meta name="description" content=" {{ page.excerpt }} ">
+        {% endif %}
+        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/theme.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/color-defaults.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-blue-white.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-white-blue.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/fonts.min.css" media="screen">
+    </head>
+    <body class="pace-on pace-dot">
+        <div class="pace-overlay swatch-blue-white"></div>
+        <header id="masthead" class="navbar navbar-sticky swatch-blue-white" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">
+
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li {% if page.active == "home" %} class="active" {% endif %}>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="dropdown {% if page.active == "get-started" %} active {% endif %}">
+                            <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Get started</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/getting-started-on-linux">Run on Linux</a>
+                                </li>
+                                <li>
+                                    <a href="/getting-started-on-windows">Run on Windows</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown {% if page.active == "docs" %} active {% endif %}">
+                            <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Docs</a>
+                            <ul class="dropdown-menu">
+                                {% for doc in site.pages %}
+                                    {% if doc.active == "docs" %}
+                                    <li>
+                                        <a href="{{ doc.url }}">{{ doc.heading }}</a>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li {% if page.active == "blog" %} class="active" {% endif %}>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li {% if page.active == "license" %} class="active" {% endif %}>
+                            <a href="/license">License</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="content" role="main">

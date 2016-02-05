@@ -1,0 +1,100 @@
+---
+layout: page
+title: Blog | PubSubSQL
+heading: Blog
+active: blog
+excerpt: "We should add this for meta"
+comments: true
+search_omit: true
+---
+
+<section class="section swatch-white-blue has-top">
+<div class="decor-top">
+    <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
+    </svg>
+</div>
+<div class="container">
+	<div class="row">
+	    <div class="col-md-8">
+			{% for post in paginator.posts %}
+            
+			<article class="post post-showinfo type-post status-publish format-image has-post-thumbnail hentry category-news category-web-design tag-design tag-dynamics tag-minimal post_format-post-format-image">
+                {% if post.cover %}
+				<div class="post-media">
+					<a href="{{ post.url }}" class="feature-image">
+						<img src="/assets/images/uploads/{{post.cover}}">	
+					</a>
+				</div>
+                {% endif %}
+				<div class="post-head small-screen-center">
+			        <h2 class="post-title entry-title">
+			            <a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">
+			                 {{ post.title }}
+                        </a>
+			        </h2>
+        			<small class="post-date">
+            			Published on {{ post.date | date_to_string }}
+            		</small>
+            	</div>
+				<div class="post-body">
+                    <p>
+                		{{ post.excerpt }}    
+                    </p>
+                    <a class="more-link" href="{{post.url}}">
+      					read more
+    				</a>
+                </div>
+			</article>
+            <hr>
+
+			{% endfor %}
+
+            {% if paginator.total_pages > 1 %}
+            <div class="pagination">
+                <ul class="post-navigation pagination">
+              {% if paginator.previous_page %}
+                <li>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+                </li>
+                
+              {% else %}
+                <li class="disabled">
+                    <a>&laquo;</a>
+                </li>
+              {% endif %}
+
+              {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="active">
+                    <a>{{ page }}</a>
+                </li>
+                {% elsif page == 1 %}
+                <li>
+                    <a href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>  
+                </li>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginator.next_page %}
+                <li>
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>    
+                </li>
+                
+              {% else %}
+                <li class="disabled">
+                    <a>&raquo;</a>
+                </li>
+              {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+		</div>
+		{% include sidebar.html %}
+	</div>
+</div>
+</section>

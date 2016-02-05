@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{page.title}}</title>
+        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        <!-- <link rel="icon" type="image/png" href="/assets/images/favicon.png" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/theme.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/color-defaults.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-black-yellow.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-red-white.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-white-red.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/swatch-yellow-black.min.css">
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/fonts.min.css" media="screen">
+    </head>
+    <body class="pace-on pace-dot">
+        <div class="pace-overlay swatch-yellow-black"></div>
+        <header id="masthead" class="navbar navbar-sticky swatch-yellow-black" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">
+<svg version="1.1" id="header-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="140px" viewBox="12.138 -4.63 83.888 17.62" enable-background="new 12.138 -4.63 83.888 17.62"
+     xml:space="preserve">
+<g>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M15.445,3.218l4.386-3.799H22.1l-5.094,4.31l5.123,5.211
+        h-2.277l-4.057-4.236L15.445,5v3.94h-1.7v-9.521h1.7C15.445-0.581,15.445,3.218,15.445,3.218z"/>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M31.947,4.883l3.488,4.058h-2.08l-3.218-3.897h-0.306v3.897
+        h-1.7v-9.522h1.992c1.489,0,2.563,0.236,3.225,0.709c0.73,0.526,1.095,1.221,1.095,2.084c0,0.674-0.228,1.254-0.686,1.739
+        C33.299,4.437,32.697,4.747,31.947,4.883z M29.831,3.791h0.54c1.611,0,2.415-0.52,2.415-1.56c0-0.974-0.783-1.461-2.35-1.461
+        h-0.605V3.791z"/>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M49.413,8.94l-3.547-6.07l-3.714,6.07H40.32l5.575-9.289
+        l5.378,9.289H49.413L49.413,8.94z"/>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M58.865,3.218l4.385-3.799h2.271l-5.094,4.31L65.55,8.94
+        h-2.277l-4.057-4.236L58.866,5v3.94h-1.701v-9.521h1.701v3.799H58.865z"/>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M77.768,0.77h-4.516v2.288h4.385v1.35h-4.385V7.59h4.516
+        v1.35h-6.217v-9.521h6.217V0.77z"/>
+    <path stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M84.485,8.94v-9.339l8.217,5.854v-6.036h1.699v9.52
+        l-8.216-5.834V8.94H84.485z"/>
+</g>
+</svg>
+
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li {% if page.active == "home" %} class="active" {% endif %}>
+                            <a href="/">Home</a>
+                        </li>
+                        <li {% if page.active == "services" %} class="active" {% endif %}>
+                            <a href="/services">Services</a>
+                        </li>
+                        <li {% if page.active == "work" %} class="active" {% endif %}>
+                            <a href="/work">Work</a>
+                        </li>
+                        <li {% if page.active == "about" %} class="active" {% endif %}>
+                            <a href="/about">About</a>
+                        </li>
+                        <li {% if page.active == "blog" %} class="active" {% endif %}>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li {% if page.active == "contact" %} class="active" {% endif %}>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="content" role="main">
+
+            <h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
+<ul class="posts">
+  {% for post in page.posts %}
+    <li>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+            <footer id="footer" role="contentinfo">
+                <section class="section swatch-black-yellow has-top">
+                    <div class="decor-top">
+                        <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0 L50 100 L100 0 L100 100 L0 100" stroke-width="0"></path>
+                        </svg>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <!-- <div id="swatch_social-2" class="sidebar-widget  widget_swatch_social">
+                                    <ul class="unstyled inline small-screen-center social-icons social-background social-big">
+                                        <li>
+                                            <a target="_blank" href="http://www.oxygenna.com">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="http://www.oxygenna.com">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div id="text-4" class="sidebar-widget widget_text">
+                                    <div class="textwidget">KRAKEN 2016 ALL RIGHTS RESERVED
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+        </div>
+        <a class="go-top hex-alt swatch-black-yellow" href="javascript:void(0)">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        {% if page.comments %}
+    
+<div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = krakensystems.github.io/;
+this.page.identifier = krakensystems; 
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//krakensystems.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endif %}
+        <script src="{{ site.url }}/assets/js/packages.min.js"></script>
+        <script src="{{ site.url }}/assets/js/theme.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+---
+layout: get-started
+permalink: getting-started-on-linux
+title: Getting started on Linux | PubSubSQL
+heading: Getting started on Linux
+active: get-started
+excerpt: "Getting started instructions for Linux users."
+search_omit: true
+---
+
+    # PubSubSQL distribution tree
+
+    pubsubsql/
+        bin/
+            pubsubsql           # server and built-in cli
+            pubsubsqlsvc        # daemon (service) installer
+            pubsubgui.jar       # interactive query java gui
+        lib/
+            pubsubsql.jar       # client api java library
+            gson-2.4.1.jar      # third party gson java library
+        samples/                # sources for samples and client api 
+            go/...                   
+            java/...
+            python/...
+
+### [Download and install the distribution]
+
+### [Test your installation]
+
+### [Run command line client (CLI)]
+
+### [Configure and run as a daemon (service)]
+
+### [Run Interactive Query gui]
+
+##### Download and install the distribution
+
+PubSubSQL x86 64-bit distribution: [pubsubsql-v1.2.0-linux-x64.tar.gz]
+
+PubSubSQL x86 32-bit distribution: [pubsubsql-v1.2.0-linux-x86.tar.gz]
+
+Download one of the above archives and extract it into /usr/local, creating a PubSubSQL tree in /usr/local/pubsubsql . For example:
+
+    $ sudo tar -C /usr/local -xzf pubsubsql-v1.1.0-linux-amd64.tar.gz.gz 
+
+To be able to run the server and the CLI from the command line without changing to the /usr/local/pubsubsql/bin directory, add /usr/local/pubsubsql/bin to the PATH environment variable. You can accomplish this by adding the following line to the end of your ~/.bashrc file:
+
+    # add to the end of ~/.bashrc file
+    export PATH=$PATH:/usr/local/pubsubsql/bin
+
+Run the following command for the changes to PATH to take effect:
+
+    $ source ~/.bashrc
+
+##### Test your installation
+
+Run the server:
+
+    $ pubsubsql
+    info: 2014/02/13 20:36:31 listening for incoming connections on  :7777 
+    info: 2014/02/13 20:36:31 started 
+
+Quit the server by typing the letter q and press enter:
+
+    q
+    info: 2014/02/11 18:01:00 stopped
+
+By default, the server listens for incoming connections on all available network interfaces and binds to the default port:7777. You may choose to specify a different port or host by using the -port and/or -ip options. For example:
+
+    $ pubsubsql -port=1234 -ip=192.168.1
+
+  [Download and install the distribution]: #download
+  [Test your installation]: #test
+  [Run command line client (CLI)]: #cli
+  [Configure and run as a daemon (service)]: #daemon
+  [Run Interactive Query gui]: #gui
+  [pubsubsql-v1.2.0-linux-x64.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x64.tar.gz/download
+  [pubsubsql-v1.2.0-linux-x86.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x86.tar.gz/download

@@ -1,0 +1,102 @@
+{% include header.html %}
+            <section class="section swatch-blue-white">
+                <div class="container">
+                    <header class="section-header no-underline">
+                        <h1 class="headline"> {{ page.title }} </h1>
+                        <br><br>
+                        <div class="post-head small-screen-center">
+                            <span class="post-date">
+                                Published on {{ page.date | date_to_string }} 
+                            </span>
+                        </div>
+                    </header>
+                </div>
+            </section>
+            <section class="section swatch-white-blue has-top">
+            <div class="decor-top">
+                <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+
+            <article class="post post-showinfo type-post status-publish format-image has-post-thumbnail hentry category-news category-web-design tag-design tag-dynamics tag-minimal post_format-post-format-image">
+                {% if page.cover %}
+                <div class="post-media">
+                    <a class="feature-image">
+                        <img src="/assets/images/uploads/{{page.cover}}">   
+                    </a>
+                </div>
+                {% endif %}
+                <div class="post-body">
+                    {{ content | markdownify }}
+                </div>
+                <br><br>
+                <hr>
+                <br><br>
+                <div>
+                    <small>Share this post</small>
+                    <ul class="social-share">
+                        <li>
+                            <a href="https://twitter.com/share?url={{site.share-url}}{{page.url}}" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/share?url={{site.share-url}}{{page.url}}" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Google+">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/sharer.php?u={{site.share-url}}{{page.url}}&amp;images={{site.share-url}}/assets/images/uploads/{{page.cover}}" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//pinterest.com/pin/create/button/?url={{site.share-url}}{{page.url}}&amp;media={{site.share-url}}/assets/images/uploads/{{page.cover}}" target="_blank" data-toggle="tooltip" title="" data-original-title="Pin on Pinterest">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{site.share-url}}{{page.url}}" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <br><br>
+                <div>
+                    {% include comments.html %}
+                </div>
+            </article>
+            </div>
+            {% include sidebar.html %}
+            </div>
+            </div>
+            </section>
+{% if page.comments %}
+    
+<div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+    this.page.url = pubsubsql.com;
+    this.page.identifier = pubsubsql; 
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//krakensystems.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endif %}
+{% include footer.html %}

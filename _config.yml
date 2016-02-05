@@ -1,0 +1,34 @@
+# Site wide configuration
+
+title: PubSubSQL 
+locale: en_US
+description: Describe your website here.
+search: true
+share-url: "www.pubsubsql.com"
+include: ['docs','get-started']
+
+# Jekyll configuration
+paginate_path: "/blog/page:num/"
+markdown:    redcarpet
+highlighter: pygments
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+
+mathjax: true
+
+paginate: 2
+
+
+# Default extensions
+post_ext: md
+page_ext: html
+
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+titlecase: true
