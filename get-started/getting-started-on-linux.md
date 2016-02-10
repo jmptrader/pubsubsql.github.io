@@ -32,12 +32,11 @@ You're done and ready to rock, you can see PubSubSQL debug output in your termin
 PubSubSQL is listening on `DOCKER_HOST:7777`.
 
 
-# Running latest release
+# Running the latest release
 
 Latest release for **Linux, Windows and OSX** is available [https://github.com/pubsubsql/pubsubsql/releases/tag/v1.2.0](here) or just follow the instructions here:
 
 ### OS X
-
 ``` bash
 curl -L  https://github.com/pubsubsql/pubsubsql/releases/download/v1.2.0/pubsubsql-v1.2.0-darwin-amd64.tgz -o pubsubsql-v1.2.0-darwin-amd64.tgz
 tar xzvf pubsubsql-v1.2.0-darwin-amd64.tgz
@@ -46,7 +45,6 @@ cd pubsubsql-v1.2.0-darwin-amd64
 ```
 
 ### Linux
-
 ``` bash
 curl -L  https://github.com/pubsubsql/pubsubsql/releases/download/v1.2.0/pubsubsql-v1.2.0-linux-amd64.tgz -o pubsubsql-v1.2.0-linux-amd64.tgz
 tar xzvf pubsubsql-v1.2.0-linux-amd64.tgz
@@ -55,7 +53,6 @@ cd pubsubsql-v1.2.0-linux-amd64
 ```
 
 ### Windows
-
 - Download [https://github.com/pubsubsql/pubsubsql/releases/download/v1.2.0/pubsubsql-v1.2.0-windows-amd64.tgz](https://github.com/pubsubsql/pubsubsql/releases/download/v1.2.0/pubsubsql-v1.2.0-windows-amd64.tgz)
 - Extract it
 - Run `pubsubsql.exe`
