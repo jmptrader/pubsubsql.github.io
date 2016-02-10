@@ -11,6 +11,10 @@ include: ['docs','get-started']
 paginate_path: "/blog/page:num/"
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 gems:
   - jekyll-sitemap
   - jekyll-paginate
