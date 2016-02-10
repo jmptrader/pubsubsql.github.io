@@ -1,14 +1,12 @@
 ---
 layout: get-started
 permalink: getting-started-on-linux
-title: Getting started on Linux | PubSubSQL
-heading: Getting started on Linux
+title: Getting started | PubSubSQL
+heading: Getting started
 active: get-started
-excerpt: "Getting started instructions for Linux users."
+excerpt: "Getting started instructions"
 search_omit: true
 ---
-
-You have a choice to install from source or simply running a Docker container.
 
 # Running from Docker
 
@@ -17,13 +15,15 @@ with installation and dependencies. To start coding and using the server just fo
 
 We assume that you're familiar with Docker and have its environment ready.
 
-- Get latest PubSubSQL image from DockerHub:
-```{r, engine='bash', count_lines}
-$ docker pull pubsubsql/pss-server
-```
+- Get the latest PubSubSQL image from DockerHub:
+    ```shell
+    $ docker pull pubsubsql/pss-server
+    ```
+
 - Start PubSubSQL container:
-```{r, engine='bash', count_lines}
-$ docker run -t -p 7777:7777 pubsubsql/pss-server
-```
+    ```shell
+    $ docker run -t -p 7777:7777 pubsubsql/pss-server
+    ```
+
 You're done and ready to rock, you can see PubSubSQL output in your terminal. PubSubSQL is listening on `DOCKER_HOST:7777`.
 
