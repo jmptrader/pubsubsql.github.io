@@ -27,7 +27,10 @@ We assume that you're familiar with Docker and have its environment ready.
     $ docker run -t -p 7777:7777 pubsubsql/pss-server
     ```
 
-You're done and ready to rock, you can see PubSubSQL debug output in your terminal. PubSubSQL is listening on `DOCKER_HOST:7777`.
+You're done and ready to rock, you can see PubSubSQL debug output in your terminal.
+
+PubSubSQL is listening on `DOCKER_HOST:7777`.
+
 
 # Building from source
 
