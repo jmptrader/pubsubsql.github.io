@@ -10,7 +10,9 @@ include: ['docs','get-started']
 # Jekyll configuration
 paginate_path: "/blog/page:num/"
 markdown:    kramdown
-highlighter: pygments
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 gems:
   - jekyll-sitemap
   - jekyll-paginate
