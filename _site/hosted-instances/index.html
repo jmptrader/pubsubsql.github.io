@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Getting Started on Linux | PubSubSQL</title>
+        <title>Hosted Instances | PubSubSQL</title>
         
-        <meta name="description" content=" A simple and clean responsive Jekyll theme for words and photos. ">
+        <meta name="description" content=" We should add this for meta ">
         
         <link rel="icon" type="image/png" href="/assets/images/favicon2.png" />
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
                         <li >
                             <a href="/">Home</a>
                         </li>
-                        <li class="dropdown  active ">
+                        <li class="dropdown ">
                             <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Get started</a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -51,7 +51,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li >
+                        <li  class="active" >
                             <a href="/hosted-instances">Hosted Instances</a>
                         </li>
                         <li class="dropdown ">
@@ -116,6 +116,10 @@
     <div class="container">
         <header class="section-header logo">
             
+                <h1 class="headline">
+                    Hosted Instances
+                </h1>
+            
             
         </header>
     </div>
@@ -128,79 +132,113 @@
     </div>
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
-             Please ask us a question: email oleg@pubsubsql.com twitter @PubSubSQL forum groups.google.com/group/pubsubsql 
-
-Getting Started on Linux
-========================
-
-    # PubSubSQL distribution tree
-
-    pubsubsql/
-        bin/
-            pubsubsql           # server and built-in cli
-            pubsubsqlsvc        # daemon (service) installer
-            pubsubgui.jar       # interactive query java gui
-        lib/
-            pubsubsql.jar       # client api java library
-            gson-2.4.1.jar      # third party gson java library
-        samples/                # sources for samples and client api 
-            go/...                   
-            java/...
-            python/...
-
-### [Download and install the distribution]
-
-### [Test your installation]
-
-### [Run command line client (CLI)]
-
-### [Configure and run as a daemon (service)]
-
-### [Run Interactive Query gui]
-
-##### Download and install the distribution
-
-PubSubSQL x86 64-bit distribution: [pubsubsql-v1.2.0-linux-x64.tar.gz]
-
-PubSubSQL x86 32-bit distribution: [pubsubsql-v1.2.0-linux-x86.tar.gz]
-
-Download one of the above archives and extract it into /usr/local, creating a PubSubSQL tree in /usr/local/pubsubsql . For example:
-
-    $ sudo tar -C /usr/local -xzf pubsubsql-v1.1.0-linux-amd64.tar.gz.gz 
-
-To be able to run the server and the CLI from the command line without changing to the /usr/local/pubsubsql/bin directory, add /usr/local/pubsubsql/bin to the PATH environment variable. You can accomplish this by adding the following line to the end of your ~/.bashrc file:
-
-    # add to the end of ~/.bashrc file
-    export PATH=$PATH:/usr/local/pubsubsql/bin
-
-Run the following command for the changes to PATH to take effect:
-
-    $ source ~/.bashrc
-
-##### Test your installation
-
-Run the server:
-
-    $ pubsubsql
-    info: 2014/02/13 20:36:31 listening for incoming connections on  :7777 
-    info: 2014/02/13 20:36:31 started 
-
-Quit the server by typing the letter q and press enter:
-
-    q
-    info: 2014/02/11 18:01:00 stopped
-
-By default, the server listens for incoming connections on all available network interfaces and binds to the default port:7777. You may choose to specify a different port or host by using the -port and/or -ip options. For example:
-
-    $ pubsubsql -port=1234 -ip=192.168.1
-
-  [Download and install the distribution]: #download
-  [Test your installation]: #test
-  [Run command line client (CLI)]: #cli
-  [Configure and run as a daemon (service)]: #daemon
-  [Run Interactive Query gui]: #gui
-  [pubsubsql-v1.2.0-linux-x64.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x64.tar.gz/download
-  [pubsubsql-v1.2.0-linux-x86.tar.gz]: http://sourceforge.net/projects/pubsubsql/files/pubsubsql-v1.2.0-linux-x86.tar.gz/download    
+            <section class="section swatch-red-white">
+    <div class="container">
+        <header class="section-header no-underline text-center">
+            <h2 class="headline  hairline">Get an in-memory relational Database with a single click!</h2>
+            <br><br>
+            <p>
+                We are preparing hosted instances for you. Subscribe to get notified when instances are available.
+            </p>
+        </header>
+        <div class="row pricing">
+            <div class="col-md-3  text-default">
+                <div class="pricing-col">
+                    <h2 class="pricing-head">Free</h2>
+                    <div class="pricing-body">
+                        <div class="pricing-price">
+                            <div class="overlay">
+                                <h4>
+                                <small>$</small>
+                                10
+                                <small>month</small>
+                                </h4>
+                            </div>
+                        </div>
+                        <ul class="pricing-list">
+                            <li>50 MB Storage</li>
+                            <li>1 Core</li>
+                            <li>-</li>
+                            <li>-</li>
+                        </ul>
+                        <a href="#" data-instance="free" data-toggle="modal" data-target="#subscribe" class="btn btn-lg btn-primary a-subscribe">Notify me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3  text-default">
+                <div class="pricing-col">
+                    <h2 class="pricing-head">Standard</h2>
+                    <div class="pricing-body">
+                        <div class="pricing-price">
+                            <div class="overlay">
+                                <h4>
+                                <small>$</small>
+                                19
+                                <small>month</small>
+                                </h4>
+                            </div>
+                        </div>
+                        <ul class="pricing-list">
+                            <li>500 MB Storage</li>
+                            <li>1 Core</li>
+                            <li>VPN</li>
+                            <li>-</li>
+                        </ul>
+                        <a href="#" data-instance="standard" data-toggle="modal" data-target="#subscribe" class="btn btn-lg btn-primary a-subscribe">Notify me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3  text-default">
+                <div class="pricing-col
+                    ">
+                    <h2 class="pricing-head">Big</h2>
+                    <div class="pricing-body">
+                        <div class="pricing-price">
+                            <div class="overlay">
+                                <h4>
+                                <small>$</small>
+                                99
+                                <small>month</small>
+                                </h4>
+                            </div>
+                        </div>
+                        <ul class="pricing-list">
+                            <li>1 GB Storage</li>
+                            <li>4 Cores</li>
+                            <li>VPN</li>
+                            <li>MySQL backend</li>
+                        </ul>
+                        <a href="#" data-instance="big" data-toggle="modal" data-target="#subscribe" class="btn btn-lg btn-primary a-subscribe">Notify me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3  text-default">
+                <div class="pricing-col
+                    ">
+                    <h2 class="pricing-head">Distributed</h2>
+                    <div class="pricing-body">
+                        <div class="pricing-price">
+                            <div class="overlay">
+                                <h4>
+                                <small>$</small>
+                                99
+                                <small>month</small>
+                                </h4>
+                            </div>
+                        </div>
+                        <ul class="pricing-list">
+                            <li>2 x 5 GB Storage</li>
+                            <li>2 x 4 Cores</li>
+                            <li>VPN</li>
+                            <li>MySQL backend</li>                            
+                        </ul>
+                        <a href="#" data-instance="distributed" data-toggle="modal" data-target="#subscribe" class="btn btn-lg btn-primary a-subscribe">Notify me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
         </div>
     </div>
 </section>

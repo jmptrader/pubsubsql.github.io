@@ -907,21 +907,30 @@ jQuery(document).ready(function( $ ) {
 function validateSubmit()
 {
     var email = $('#subscribe form input[type=email]').val();
-    var name = $('#subscribe form input[type=text]').val();
-      if(validateEmail(email) && validateName(name))
+    var instance = $('#instance').val();
+    var spam = $('#subscribe form input[name="_gotcha"]').val();
+      if(validateEmail(email))
       { 
-        
-        return true;
+        $.ajax({
+            url: "//formspree.io/info@pubsubsql.com",
+            method: "POST",
+            data: {email: email, instance: instance, _gotcha: spam},
+            dataType: "json"
+        }).done(function() {
+            $('#subscribe').modal('hide');
+            $('#subscribe form input[type=email]').val("");
+            $('#instance').val("");
+            $('#subscribe form input[name="_gotcha"]').val("");
+            $('.error-msg').hide(100);
+      });
+
       }
-      showErrors();
-  return false;
+    showErrors();
+    return false;
 }
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-}
-function validateName(name) {
-    return name.length > 0;
 }
 function showErrors(){
     $('.error-msg').show(300);

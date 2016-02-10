@@ -28,10 +28,13 @@
     <loc>/blog/</loc>
   </url>
   <url>
-    <loc>/get-started/</loc>
+    <loc>/hosted-instances/</loc>
   </url>
   <url>
     <loc>/</loc>
+  </url>
+  <url>
+    <loc>/get-started/</loc>
   </url>
   <url>
     <loc>/docs/java.html</loc>
