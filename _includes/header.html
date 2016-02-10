@@ -19,6 +19,9 @@
         <link rel="stylesheet" href="{{ site.url }}/assets/css/fonts.min.css" media="screen">
     </head>
     <body class="pace-on pace-dot">
+        <script>
+
+        </script>
         <div class="pace-overlay swatch-blue-white"></div>
         <header id="masthead" class="navbar navbar-sticky swatch-blue-white" role="banner">
             <div class="container">
@@ -47,6 +50,9 @@
                                     <a href="/getting-started-on-windows">Run on Windows</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li {% if page.active == "hosted" %} class="active" {% endif %}>
+                            <a href="/hosted-instances">Hosted Instances</a>
                         </li>
                         <li class="dropdown {% if page.active == "docs" %} active {% endif %}">
                             <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Docs</a>

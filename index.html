@@ -2,8 +2,9 @@
 layout: page
 title: PubSubSQL
 heading: PubSubSQL
-description: A relational database with a built-in Publish-Subscribe
+description: An open-source in-memory database integrated with Publish-Subscribe - Ver. 1.2.0
 active: home
+excerpt: "A simple and clean responsive Jekyll theme for words and photos."
 search_omit: true
 ---
 
@@ -17,112 +18,31 @@ search_omit: true
                     <div class="row vertical-top">
                         <div class="col-md-8 col-md-offset-2  text-default text-center ">
                             <h2 class="headline hairline">
-                                What is PubSubSQL?
+                                What is this PubSubSQL you are talking about?
                             </h2>
                             <p>
-                                An open-source <b>in-memory relational database</b> with <b>PUB-SUB</b> and an optional <b>MySQL backend</b>. 
+                                PubSubSQL makes it simple, easy and quick to develop applications that require database and notification services. Publish-Subscribe messaging is integrated with an in-memory database as a single product. When the underlying data changes, client subscribers receive updates in soft real-time without having to poll the database or implement database trigger hooks.
                             </p>
                             <p>
-                           No more periodic polling or implementing database triggers! 
-                             </p>
-                            <p>
-                                Subscribe any of your web or backend services to changes in a relational database!
+                                PubSubSQL is written in Go and runs on Linux and Windows, with Mac OS X in the works. We provide unified APIs for Go, Java and .Net and will soon be adding Python, Objective-C, JavaScript, Ruby and more. PubSubSQL implements its own simplified flavor of SQL and has a dynamic table schema with columns auto-created on demand.
                             </p>
                             <br><br>
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <iframe src="https://www.youtube.com/embed/dXL_NpP2hqA?vq=large" frameborder="0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-
-
-            <section class="section swatch-blue-white has-top">
-                <div class="decor-top">
-                    <svg class="decor" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M0 100 L100 0 L100 100" stroke-width="0"></path>
-                  </svg>
-                </div>
-                <div class="container">
-                    <div class="row vertical-top">
-                        <div class="col-md-8 col-md-offset-2  text-default text-center ">
-                            <h2 class="headline hairline">
-                                FAQ
-                            </h2>
-
-<!-- BEGIN FAQ ACCORDION -->
-<div class="panel-group " id="accordion_56bb066646c3f">
-   <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066647be5" aria-expanded="false">1. WHY YET ANOTHER DATABASE?</a></div>
-      <div class="panel-collapse collapse" id="group56bb066647be5" aria-expanded="false" style="height: 0px;">
-         <div class="panel-body">
-            <p></p>
-            <p>People usually have to choose between a fast in-memory store and a conventional database to give their users a responsive real-time feeling and at the same time allow backend service run analytics in a more analytic-friendly environment. We've been in that same boat and ended up coding complex contraptions with caches, long-term storage and notification systems which more often than not spiral out of control and become a maintenance nightmare. So we thought <i>"Why not have a SQL-like interface with a PUB-SUB interface and just stream data to a normal database?"</i>. And PubSubSql was born!</p>
-            <p></p>
-         </div>
-      </div>
-   </div>
-   <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664805d" aria-expanded="false">2. HOW IS THIS IMPLEMENTED?</a></div>
-      <div class="panel-collapse collapse" id="group56bb06664805d" aria-expanded="false" style="height: 0px;">
-         <div class="panel-body">
-            <p></p>
-            <p>Service is written in pure Go and runs on pretty much anything. We're making heavy-use of Go parallelization wonders (goroutines and channels) along with some low-level networking to allow MySQL streaming and PUB-SUB at the same time.<br>
-                </p><p>Code is open-source, so feel free to check it out: <a href="https://github.com/pubsubsql/pubsubsql">https://github.com/pubsubsql/pubsubsql</a>. Just keep in mind it's under development :) All pull-requests, questions and issues welcome!</p>
-
-         </div>
-      </div>
-   </div>
-   <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664846b" aria-expanded="false">3. HOW DO I START?</a></div>
-      <div class="panel-collapse collapse" id="group56bb06664846b" aria-expanded="false">
-         <div class="panel-body">
-            <p></p>
-            <p>You can either run the service yourself (MySQL backend is NOT required!), or you can make use of a public server that we are providing for you to play with! More details <a href="#getting_started">available here</a></p>
-            <p></p>
-         </div>
-      </div>
-   </div>
-   <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066648858" aria-expanded="false">4. IS THIS PRODUCTION READY?</a></div>
-      <div class="panel-collapse collapse" id="group56bb066648858" aria-expanded="false" style="height: 0px;">
-         <div class="panel-body">
-            <p></p>
-            <p>Not yet. We're working heavily on getting it to RC1.0 but we're not there yet. As we're <a href="https://github.com/pubsubsql/pubsubsql">open-source</a>, feel free to jump in! Testing, stress-testing, contribution - everything is welcome!</p>
-            <p></p>
-         </div>
-      </div>
-   </div>
-   
-   <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664a7cf" aria-expanded="false">8. WHY DO I KEEP ASKING?</a></div>
-      <div class="panel-collapse collapse" id="group56bb06664a7cf" aria-expanded="false">
-         <div class="panel-body">
-            <p></p>
-            <p>Aliquam erat volutpat. Praesent rutrum auctor metus, in feugiat mi congue id. Curabitur ultricies dapibus aliquet. Sed id scelerisque tortor. Nulla facilisi. Praesent placerat gravida velit, ut adipiscing est tristique sed. Cras vel elit mauris, sed sagittis sem. Donec urna tellus, suscipit ac convallis vel, euismod a leo. Nulla pretium dapibus magna bibendum vehicula. Nunc laoreet magna nec dolor ornare pulvinar. Phasellus vel lacus dui, sit amet blandit tellus. Sed id ipsum at justo ultrices tempus vel vitae dolor.</p>
-            <p></p>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- END FAQ ACCORDION -->
-                            <br><br>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <section class="section swatch-blue-white section-small"></section>
             
             
-            <section class="section swatch-white-blue" id="getting_started">
-                                <div class="decor-top">
-                    <svg class="decor" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
-   <path d="M0 0 L100 100 L0 100" stroke-width="0"></path>
-</svg>
-                </div>
+            <section class="section swatch-white-blue">
                 <div class="container">
                     <header class="section-header text-center underline">
-                        <h1 class="headline super hairline">Getting started</h1>
+                        <h1 class="headline super hairline">Get started</h1>
                         <p>
-                        PubSubSQL server runs on any flavour of <b>Linux</b>
+                            We are happy to present you with our first release and hope that you will find the product fun to use. 
                         </p>
                     </header>
                     <div class="row vertical-top">

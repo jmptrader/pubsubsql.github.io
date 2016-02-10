@@ -19,6 +19,9 @@
         <link rel="stylesheet" href="/assets/css/fonts.min.css" media="screen">
     </head>
     <body class="pace-on pace-dot">
+        <script>
+
+        </script>
         <div class="pace-overlay swatch-blue-white"></div>
         <header id="masthead" class="navbar navbar-sticky swatch-blue-white" role="banner">
             <div class="container">
@@ -47,6 +50,9 @@
                                     <a href="/getting-started-on-windows">Run on Windows</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li >
+                            <a href="/hosted-instances">Hosted Instances</a>
                         </li>
                         <li class="dropdown ">
                             <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Docs</a>
@@ -119,7 +125,7 @@
         </svg>
     </div>
     <div class="container">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
              Please ask us a question: email oleg@pubsubsql.com twitter @PubSubSQL forum groups.google.com/group/pubsubsql 
 
 Getting Started on Linux
@@ -259,10 +265,42 @@ By default, the server listens for incoming connections on all available network
                 </section>
             </footer>
         </div>
+        <div id="subscribe" class="modal fade swatch-white-blue" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+              <h3>Get notified</h3>
+                <p>
+                    Notify me when hosted instances are avaiable.    
+                </p>
+                
+                <form action="http://formspree.io/info@pubsubsql.com" method="POST" onsubmit="return validateSubmit();">
+                <div class="form-group form-icon-group">
+                      <i class="fa fa-user"></i> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Your name *"></span>
+                </div>
+                <div class="form-group form-icon-group">
+                    <i class="fa fa-envelope"> </i> 
+                        <span class="wpcf7-form-control-wrap your-email">
+                            <input type="email" name="_replyto" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Your email *">
+                            </span>
+                </div>
+                <p class="error-msg">
+                    Please provide correct information
+                </p>
+                <input id="instance" type="hidden" name="type">
+                <input type="submit" value="Send">
+            </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <a class="go-top hex-alt swatch-black-yellow" href="javascript:void(0)">
             <i class="fa fa-angle-up"></i>
         </a>
         <script src="/assets/js/packages.min.js"></script>
-        <script src="/assets/js/theme.min.js"></script>
+        <script src="/assets/js/theme.js"></script>
     </body>
 </html>
