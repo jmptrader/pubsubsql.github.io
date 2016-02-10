@@ -47,6 +47,7 @@ If you want to run the server locally and build it yourself you'll need a functi
     ```
 
 - Running the server is simple as
+
     ```shell
     $ pubsubsql
     ```
