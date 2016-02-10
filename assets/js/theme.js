@@ -921,7 +921,7 @@ function validateSubmit()
             $('#subscribe form input[type=email]').val("");
             $('#instance').val("");
             $('#subscribe form input[name="_gotcha"]').val("");
-            $('.error-msg').hide(100);
+            $('.error-msg').hide();
       });
 
       }
