@@ -34,7 +34,7 @@ PubSubSQL is listening on `DOCKER_HOST:7777`.
 
 # Running the latest release
 
-Latest release for **Linux, Windows and OSX** is available [https://github.com/pubsubsql/pubsubsql/releases/tag/v1.2.0](here) or just follow the instructions here:
+Latest release for **Linux, Windows and OSX** is available for [download here](https://github.com/pubsubsql/pubsubsql/releases/tag/v1.2.0) or just follow the instructions here:
 
 ### OS X
 ``` bash
