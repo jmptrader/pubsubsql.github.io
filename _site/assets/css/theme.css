@@ -14763,3 +14763,6 @@ table.variations .select-wrap select, .variation-wrap .select-wrap select {
 	color:red;
 	display: none;
 }
+ol {
+	text-align: left;
+}

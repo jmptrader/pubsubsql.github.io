@@ -7,7 +7,6 @@
         <title>Java code example</title>
         
         <meta name="description" content=" <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in vehicula lorem, eleifend lobortis enim. Morbi cursus ante quis ligula lacinia eleifend. Nunc egestas sodales tellus. Donec aliquam, eros in ultricies iaculis, diam libero blandit metus, eget venenatis ipsum felis quis risus. Sed scelerisque magna non elit elementum mollis eu in mauris. Nulla bibendum rhoncus urna, eu pulvinar nisl. In id nibh dui. Etiam at condimentum nisi. Sed semper, turpis at vehicula sollicitudin, nibh turpis aliquet urna, aliquet euismod dui leo a sem. Nulla dapibus dui eu nulla euismod, a tincidunt risus sagittis. Praesent pretium quam id odio pulvinar dictum. Donec quis ultrices augue. Sed ultricies lectus id nulla porttitor pulvinar. In feugiat risus nisl.</p>
-
  ">
         
         <link rel="icon" type="image/png" href="/assets/images/favicon2.png" />
@@ -43,15 +42,7 @@
                             <a href="/">Home</a>
                         </li>
                         <li class="dropdown ">
-                            <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Get started</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/getting-started-on-linux">Run on Linux</a>
-                                </li>
-                                <li>
-                                    <a href="/getting-started-on-windows">Run on Windows</a>
-                                </li>
-                            </ul>
+                            <a href="/getting-started">Getting started</a>
                         </li>
                         <li >
                             <a href="/hosted-instances">Hosted Instances</a>
@@ -64,8 +55,6 @@
                                     <li>
                                         <a href="/docs/dotNet.html">.Net Client API</a>
                                     </li>
-                                    
-                                
                                     
                                 
                                     
@@ -145,34 +134,34 @@
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.awt.Rectangle</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjectVarsAsParameters</span>
-<span class="o">{</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+<span class="o">{</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
   <span class="o">{</span> <span class="n">go</span><span class="o">();</span>
   <span class="o">}</span>
   
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">go</span><span class="o">()</span>
-  <span class="o">{</span> <span class="n">Rectangle</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">5</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method go. r1 &quot;</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">go</span><span class="o">()</span>
+  <span class="o">{</span> <span class="n">Rectangle</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">5</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method go. r1 "</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
     <span class="c1">// could have been </span>
-    <span class="c1">//System.out.prinltn(&quot;r1&quot; + r1.toString());</span>
+    <span class="c1">//System.out.prinltn("r1" + r1.toString());</span>
     <span class="n">r1</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method go. r1 &quot;</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method go. r1 "</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
     <span class="n">alterPointee</span><span class="o">(</span><span class="n">r1</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method go. r1 &quot;</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method go. r1 "</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
     
     <span class="n">alterPointer</span><span class="o">(</span><span class="n">r1</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method go. r1 &quot;</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method go. r1 "</span> <span class="o">+</span> <span class="n">r1</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
   <span class="o">}</span>
   
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">alterPointee</span><span class="o">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="o">)</span>
-  <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method alterPointee. r &quot;</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">alterPointee</span><span class="o">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="o">)</span>
+  <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method alterPointee. r "</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
     <span class="n">r</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="mi">20</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method alterPointee. r &quot;</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method alterPointee. r "</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
   <span class="o">}</span>
   
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">alterPointer</span><span class="o">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="o">)</span>
-  <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method alterPointer. r &quot;</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">35</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;In method alterPointer. r &quot;</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">alterPointer</span><span class="o">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="o">)</span>
+  <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method alterPointer. r "</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">35</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"In method alterPointer. r "</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
   <span class="o">}</span>
   
   

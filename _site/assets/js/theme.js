@@ -921,12 +921,13 @@ function validateSubmit()
             $('#subscribe form input[type=email]').val("");
             $('#instance').val("");
             $('#subscribe form input[name="_gotcha"]').val("");
-            $('.error-msg').hide(100);
+            $('.error-msg').hide();
       });
 
+      } else {
+            showErrors();
+            return false;
       }
-    showErrors();
-    return false;
 }
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
