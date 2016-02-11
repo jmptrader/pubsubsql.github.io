@@ -906,6 +906,7 @@ jQuery(document).ready(function( $ ) {
 
 function validateSubmit()
 {
+    console.log("Submit");
     var email = $('#subscribe form input[type=email]').val();
     var instance = $('#instance').val();
     var spam = $('#subscribe form input[name="_gotcha"]').val();
@@ -927,6 +928,7 @@ function validateSubmit()
       } else {
             showErrors();
       }
+      return false;
 }
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
