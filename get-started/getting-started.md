@@ -1,6 +1,6 @@
 ---
 layout: get-started
-permalink: getting-started-on-linux
+permalink: getting-started
 title: Getting started | PubSubSQL
 heading: Getting started with PubSubSQL
 active: get-started
