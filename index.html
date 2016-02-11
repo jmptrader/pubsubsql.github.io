@@ -53,7 +53,7 @@ search_omit: true
             <!-- BEGIN FAQ ACCORDION -->
             <div class="panel-group " id="accordion_56bb066646c3f">
              <div class="panel panel-default">
-              <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066647be5" aria-expanded="false">1. WHY YET ANOTHER DATABASE?</a></div>
+              <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066647be5" aria-expanded="false">1. WHY ANOTHER DATABASE?</a></div>
               <div class="panel-collapse collapse" id="group56bb066647be5" aria-expanded="false" style="height: 0px;">
                <div class="panel-body">
                 <p></p>
@@ -63,7 +63,7 @@ search_omit: true
         </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664805d" aria-expanded="false">2. HOW IS THIS IMPLEMENTED?</a></div>
+      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664805d" aria-expanded="false">2. HOW IS IT IMPLEMENTED?</a></div>
       <div class="panel-collapse collapse" id="group56bb06664805d" aria-expanded="false" style="height: 0px;">
        <div class="panel-body">
         <p></p>
@@ -78,7 +78,7 @@ search_omit: true
   <div class="panel-collapse collapse" id="group56bb06664846b" aria-expanded="false">
    <div class="panel-body">
     <p></p>
-    <p>You can either run the service yourself (MySQL backend is NOT required!), or you can make use of a public server that we are providing for you to play with! More details <a href="#getting_started">available here</a></p>
+    <p>You can either run the service yourself (MySQL backend is NOT required!), or you can make use of a public server that we are providing for you to play with! More details <a href="/getting-started">available here</a></p>
     <p></p>
 </div>
 </div>
@@ -111,10 +111,18 @@ search_omit: true
  </div>
  <div class="container">
     <header class="section-header text-center underline">
-        <h1 class="headline super hairline">Getting started</h1>
+        <h1 class="headline super hairline">Quickstart</h1>
         <p>
-            You can run PubSubSql server on OSX, Linux or Windows, either using a ready to install binary or Docker.
+            Fastest way to start HEAD version of PubSubSQL is to do it in Go:
         </p>
+        <p>
+            1. Once you're set up just clone [https://github.com/pubsubsql/pubsubsql](our server repo) and build:
+
+                ```shell
+                $ go get github.com/pubsubsql/pubsubsql
+                ```
+        </p>
+
     </header>
     <div class="row vertical-top">
         <div class="col-md-12  text-default">
