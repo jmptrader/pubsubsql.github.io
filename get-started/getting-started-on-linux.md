@@ -32,7 +32,7 @@ You're done and ready to rock, you can see PubSubSQL debug output in your termin
 PubSubSQL is listening on `DOCKER_HOST:7777`.
 
 
-# Running the latest release
+# Running the latest binary release
 
 Latest release for **Linux, Windows and OSX** is available for [download here](https://github.com/pubsubsql/pubsubsql/releases/tag/v1.2.0) or just follow the instructions here:
 
