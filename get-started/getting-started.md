@@ -72,14 +72,7 @@ If you want to run the server locally and build it yourself you'll need a functi
     $ go get github.com/pubsubsql/pubsubsql
     ```
 
-2. It should be ready to run! If by any chance pubsubsql binary was not automatically built, build it using
-
-    ```shell
-    $ go build github.com/pubsubsql/pubsubsql
-    $ go install github.com/pubsubsql/pubsubsql
-    ```
-
-3. Running the server is simple as
+3. You're ready! Running the server is simple as
 
     ```shell
     $ pubsubsql
