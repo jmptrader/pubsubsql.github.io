@@ -906,7 +906,6 @@ jQuery(document).ready(function( $ ) {
 
 function validateSubmit()
 {
-    console.log("Submit");
     var email = $('#subscribe form input[type=email]').val();
     var instance = $('#instance').val();
     var spam = $('#subscribe form input[name="_gotcha"]').val();
