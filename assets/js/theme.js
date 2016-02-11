@@ -912,7 +912,7 @@ function validateSubmit()
       if(validateEmail(email))
       { 
         $.ajax({
-            url: "//formspree.io/info@pubsubsql.com",
+            url: "http://formspree.io/info@pubsubsql.com",
             method: "POST",
             data: {email: email, instance: instance, _gotcha: spam},
             dataType: "json"
@@ -923,11 +923,9 @@ function validateSubmit()
             $('#subscribe form input[name="_gotcha"]').val("");
             $('.error-msg').hide();
       });
-        return true;
 
       } else {
             showErrors();
-            return false;
       }
 }
 function validateEmail(email) {
