@@ -53,7 +53,7 @@ search_omit: true
             <!-- BEGIN FAQ ACCORDION -->
             <div class="panel-group " id="accordion_56bb066646c3f">
              <div class="panel panel-default">
-              <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066647be5" aria-expanded="false">1. WHY YET ANOTHER DATABASE?</a></div>
+              <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb066647be5" aria-expanded="false">1. WHY ANOTHER DATABASE?</a></div>
               <div class="panel-collapse collapse" id="group56bb066647be5" aria-expanded="false" style="height: 0px;">
                <div class="panel-body">
                 <p></p>
@@ -63,7 +63,7 @@ search_omit: true
         </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664805d" aria-expanded="false">2. HOW IS THIS IMPLEMENTED?</a></div>
+      <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664805d" aria-expanded="false">2. HOW IS IT IMPLEMENTED?</a></div>
       <div class="panel-collapse collapse" id="group56bb06664805d" aria-expanded="false" style="height: 0px;">
        <div class="panel-body">
         <p></p>
@@ -78,7 +78,7 @@ search_omit: true
   <div class="panel-collapse collapse" id="group56bb06664846b" aria-expanded="false">
    <div class="panel-body">
     <p></p>
-    <p>You can either run the service yourself (MySQL backend is NOT required!), or you can make use of a public server that we are providing for you to play with! More details <a href="#getting_started">available here</a></p>
+    <p>You can either run the service yourself (MySQL backend is NOT required!), or you can make use of a public server that we are providing for you to play with! More details <a href="/getting-started">available here</a></p>
     <p></p>
 </div>
 </div>
@@ -94,16 +94,6 @@ search_omit: true
 </div>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><a class="accordion-toggle collapsed" data-parent="#accordion_56bb066646c3f" data-toggle="collapse" href="#group56bb06664a7cf" aria-expanded="false">8. WHY DO I KEEP ASKING?</a></div>
-  <div class="panel-collapse collapse" id="group56bb06664a7cf" aria-expanded="false">
-   <div class="panel-body">
-    <p></p>
-    <p>Aliquam erat volutpat. Praesent rutrum auctor metus, in feugiat mi congue id. Curabitur ultricies dapibus aliquet. Sed id scelerisque tortor. Nulla facilisi. Praesent placerat gravida velit, ut adipiscing est tristique sed. Cras vel elit mauris, sed sagittis sem. Donec urna tellus, suscipit ac convallis vel, euismod a leo. Nulla pretium dapibus magna bibendum vehicula. Nunc laoreet magna nec dolor ornare pulvinar. Phasellus vel lacus dui, sit amet blandit tellus. Sed id ipsum at justo ultrices tempus vel vitae dolor.</p>
-    <p></p>
-</div>
-</div>
-</div>
 </div>
 <!-- END FAQ ACCORDION -->
 <br><br>
@@ -121,17 +111,21 @@ search_omit: true
  </div>
  <div class="container">
     <header class="section-header text-center underline">
-        <h1 class="headline super hairline">Getting started</h1>
+        <h1 class="headline super hairline">Quickstart</h1>
         <p>
-            You can run PubSubSql server on pretty much any system able to compile Go or run Docker.
+            Fastest way to start HEAD version of PubSubSQL is to do it in Go:
         </p>
+
+        {% capture my-include %}{% include quickstart.md %}{% endcapture %}
+        {{ my-include | markdownify  }}
+
     </header>
     <div class="row vertical-top">
         <div class="col-md-12  text-default">
             <div class="text-center">
                 <div class="text-center">
-                    <a href="/getting-started-on-linux" class="btn btn-info btn-lg  btn-icon-right" target="_self">
-                     Getting started <span class="hex-alt"><i class="fa fa-rocket"></i></span>
+                    <a href="/getting-started" class="btn btn-info btn-lg  btn-icon-right" target="_self">
+                     Getting started now!<span class="hex-alt"><i class="fa fa-rocket"></i></span>
                  </a>
              </div>
          </div>
