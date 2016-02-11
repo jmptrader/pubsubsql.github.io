@@ -116,7 +116,8 @@ search_omit: true
             Fastest way to start HEAD version of PubSubSQL is to do it in Go:
         </p>
         <p>
-        {% include quickstart.md %}
+        {% capture my-include %}{% include quickstart.md %}{% endcapture %}
+        {{ my-include | markdownify  }}
         </p>
 
     </header>
