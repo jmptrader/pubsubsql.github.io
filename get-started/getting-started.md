@@ -11,7 +11,6 @@ search_omit: true
 # Running the server
 
 ### Using Docker
------
 We've packed our PubSubSQL server in a lightweight Docker container - we don't want you to bother 
 with installation and dependencies. To start coding and using the server just follow next two steps. 
 
@@ -34,8 +33,8 @@ You're done and ready to rock, you can see PubSubSQL debug output in your termin
 PubSubSQL is listening on `DOCKER_HOST:7777`.
 
 
-### Running the latest binary release
 -----
+### Running the latest binary release
 
 Latest release for **Linux, Windows and OSX** is available for [download here](https://github.com/pubsubsql/pubsubsql/releases/tag/v1.2.0) or just follow the instructions here:
 
@@ -62,8 +61,8 @@ cd pubsubsql-v1.2.0-linux-amd64
 
 
 
-### Building from source
 ----
+### Building from source
 
 If you want to run the server locally and build it yourself you'll need a functional Go environment, at least version 1.4.
 
