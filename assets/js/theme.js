@@ -923,6 +923,7 @@ function validateSubmit()
             $('#subscribe form input[name="_gotcha"]').val("");
             $('.error-msg').hide();
       });
+        return true;
 
       } else {
             showErrors();
