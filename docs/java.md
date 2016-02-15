@@ -50,11 +50,15 @@ System.out.println("subscribed to Stocks pubsubid: " + pubsubid);
 
 int timeout = 100;
 while (subscriber.waitForPubSub(timeout)) {
-    System.out.println("*********************************");
+	System.out.println("*********************************");
 	System.out.println("Action:" + subscriber.getAction());
 	while (subscriber.nextRow()) {
-	    System.out.println("New MEGA CAP stock:" + subscriber.getValue("Ticker"));
-	    System.out.println("Price:" + subscriber.getValue("Price"));
+		int ordinal = 0;
+		for (String column : subscriber.getColumns()) {
+			System.out.print(String.format("%s:%s ", column, subscriber.getValue(ordinal)));
+			ordinal++;
+		}
+		System.out.println(); 
 	}
 }
 ```
