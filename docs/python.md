@@ -28,7 +28,7 @@ All commands are ran using `execute` command which accepts query as parameter.
 Function example:
 
 ``` python
-client.execute("tag Stocks MarketCap", function(err, response) 
+client.execute("tag Stocks MarketCap"
 ```
 
 ### Subscribing to data
