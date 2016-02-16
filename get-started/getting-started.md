@@ -92,7 +92,7 @@ If you want to run the server locally and build it yourself you'll need a functi
 
 # Connecting to the server
 
-Once server is up and running (or you want to use our public playground server), just follow the docs for your favorite language:
+Once the server is up and running (or you want to use our public playground server), just follow the docs for your favorite language:
 
     * [Node JS](/docs/nodejs.html)
     * [Go](/docs/go.html)
