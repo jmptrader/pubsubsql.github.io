@@ -1,12 +1,7 @@
-1. Once you're set up just clone [https://github.com/pubsubsql/pubsubsql](our server repo):
+1. Once you're set up just get and run the server:
 
     ```shell
     $ go get github.com/pubsubsql/pubsubsql
-    ```
-
-2. Build and start PubSubSQL server:
-
-    ```shell
     $ cd $GOPATH/src/github.com/pubsubsql/pubsubsql && go build && pubsubsql
     ```
     
@@ -58,18 +53,9 @@
 
 	    var action string
 	    for {
-
-		    fmt.Println("*********************************")
 		    action = subscriber.Action()
-		    fmt.Println(action)
-		    switch action {
-		    case "subscribe":
-			    fmt.Println("===> Subscription confirmed!")
-		    case "add":
-			    fmt.Println("===> Initial data")
-		    case "insert":
-			    fmt.Println("===> New data")
-		    }
+		    fmt.Println("Action:", action)
+
 		    for {
 			    more := subscriber.NextRow()
 
@@ -82,7 +68,7 @@
 			    }
 		    }
 	    }
-}
+    }
     ```
     
 5. Profit!
