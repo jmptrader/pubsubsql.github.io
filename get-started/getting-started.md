@@ -14,7 +14,11 @@ You can either run the server on your machine or you can use our publicly availa
 
 ### Public server
 
-Public server is available at this endpoint: `192.99.101.169:7777`. Just follow the documentation for e.g. [Node JS](/docs/nodejs.html) and play!
+Public server is available at this endpoint: `192.99.101.169:7777`.
+
+Just follow the documentation for e.g. [Node JS](/docs/nodejs.html) and play!
+
+----
 
 ### Using Docker
 We've packed our PubSubSQL server in a lightweight Docker container - we don't want you to bother 
@@ -89,6 +93,7 @@ If you want to run the server locally and build it yourself you'll need a functi
 # Connecting to the server
 
 Once server is up and running (or you want to use our public playground server), just follow the docs for your favorite language:
+
 - [Node JS](/docs/nodejs.html)
 - [Go](/docs/go.html)
 - [Java](/docs/java.html)
