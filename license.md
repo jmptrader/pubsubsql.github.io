@@ -15,7 +15,7 @@ License and Attributions
 
 ##### License
 
-The PubSubSQL server is licensed under [GNU AGPL v3.0.]
+The PubSubSQL server is licensed under [Apache License v2.0.]
 
 The Client APIs are licensed under [Apache License v2.0.]
 
@@ -28,8 +28,7 @@ Portions of this Website are modifications from work created and [shared by Goog
 The Java Client API uses the Gson Java library licensed under [Apache License v2.0.]
 
   [CompleteDB LLC]: http://www.completedb.com
-  [Oleg Rabaev]: mailto:oleg@pubsubsql.com
-  [GNU AGPL v3.0.]: www.gnu.org/licenses/agpl-3.0.html
+  [Oleg Rabaev]: mailto:oleg@completedb.com
   [Apache License v2.0.]: http://www.apache.org/licenses/
   [Creative Commons Attribution 3.0 License.]: http://creativecommons.org/licenses/by/3.0/
   [shared by Google]: http://code.google.com/policies.html
