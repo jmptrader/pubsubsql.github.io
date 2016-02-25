@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>License | PubSubSQL</title>
+        <title>NodeJS docs | PubSubSQL</title>
         
-        <meta name="description" content=" A simple and clean responsive Jekyll theme for words and photos. ">
+        <meta name="description" content=" Documentation for NodeJS language ">
         
         <link rel="icon" type="image/png" href="/assets/images/favicon2.png" />
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
@@ -46,7 +46,7 @@
                         <li >
                             <a href="/hosted-instances">Hosted Instances</a>
                         </li>
-                        <li class="dropdown ">
+                        <li class="dropdown  active ">
                             <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">Docs</a>
                             <ul class="dropdown-menu">
                                 
@@ -95,7 +95,7 @@
                         <li >
                             <a href="/blog">Blog</a>
                         </li>
-                        <li  class="active" >
+                        <li >
                             <a href="/license">License</a>
                         </li>
                     </ul>
@@ -109,7 +109,7 @@
         <header class="section-header logo">
             
                 <h1 class="headline">
-                    License
+                    NodeJS Client API
                 </h1>
             
             
@@ -124,24 +124,76 @@
     </div>
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
-            <p>The PubSubSQL project is sponsored by <a href="http://www.completedb.com">CompleteDB LLC</a> and authored by <a href="mailto:oleg@completedb.com">Oleg Rabaev</a>.</p>
+            <h3 id="connecting">Connecting</h3>
 
-<h1 id="license-and-attributions">License and Attributions</h1>
+<p>Minimal connection is without any options supplied. In this case, connection is attempted on default path: <code>localhost:7777</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">pss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pubsubsql'</span><span class="p">),</span>
+    <span class="nx">client</span> <span class="o">=</span> <span class="nx">pss</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="connection-options">Connection options</h3>
 
-<h5 id="license">License</h5>
+<p>Options are supplied to <code>createClient</code> method as an object.</p>
 
-<p>The PubSubSQL server is licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
+<p>Supported options:</p>
 
-<p>The Client APIs are licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
+<ul>
+<li><strong>path</strong> Complete server endpoint in format <code>host:port</code>, e.g. <code>127.0.0.1:7777</code></li>
+<li><strong>host</strong> Server host, e.g. <code>127.0.0.1</code></li>
+<li><strong>port</strong> Server port, e.g. <code>7777</code></li>
+<li><strong>family</strong> Connection type, either <code>IPv6</code> or <code>IPv4</code>. Default is autodetected from <code>host</code>.</li>
+</ul>
 
-<p>The Website content is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+<p>Extended example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">pss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pubsubsql'</span><span class="p">),</span>
+    <span class="nx">client</span> <span class="o">=</span> <span class="nx">pss</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
+        <span class="na">path</span><span class="p">:</span> <span class="s2">"127.0.0.1:7777"</span><span class="p">,</span>
+        <span class="na">family</span><span class="p">:</span> <span class="s2">"IPv4"</span>
+    <span class="p">});</span>
+</code></pre></div>
+<h3 id="running-commands">Running commands</h3>
 
-<h5 id="attributions">Attributions</h5>
+<p>All commands are ran using <code>query</code> command which accepts two parameters: command itself and callback function.
+Callback function is triggered when server responds to the query. In case of subscription, callback is called 
+repeatedly every time new data is published.</p>
 
-<p>Portions of this Website are modifications from work created and <a href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>. Please find the original work at <a href="http://www.golang.org">golang.org</a></p>
+<p>Function example:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">'tag Stocks MarketCap'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"GOT RESPONSE for tag:"</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="subscribing-to-data">Subscribing to data</h3>
 
-<p>The Java Client API uses the Gson Java library licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
-    
+<p>The following example sets up client connection and once the connection is ready it subscribes to changes in <code>Stocks</code> table
+when <code>MarketCap</code> value is <code>MEGA CAP</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">pss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pubsubsql'</span><span class="p">),</span>
+    <span class="nx">client</span> <span class="o">=</span> <span class="nx">pss</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Got error:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'CONNECTION ENDED'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'ready'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'CONNECTION READY'</span><span class="p">);</span>
+
+    <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">"subscribe * from Stocks where MarketCap = 'MEGA CAP'"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"[subscription] error:"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="s1">'subscribe'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'[subscription] subscription confirmed!'</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="s1">'add'</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'[subscription] initial data!'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="s1">'insert'</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'[subscription] new data!'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">})</span>
+</code></pre></div>    
         </div>
     </div>
 </section>

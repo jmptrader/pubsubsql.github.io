@@ -4,9 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>License | PubSubSQL</title>
+        <title>PubSubSQL is back!</title>
         
-        <meta name="description" content=" A simple and clean responsive Jekyll theme for words and photos. ">
+        <meta name="description" content=" <p>Few years back we were working on a project where we needed real-time synchronization of data along with storing that same data into your run-of-the-mill database. Sounds like a simple enough request, right? But there is no out-of-the-box solution! Then, as now, developers and architects usually end up constructing a complex contraption with MySQL or some other database on one side and an in-memory solution capable of PUB-SUB on the other side, like e.g. Redis. And as is usually the case -
+things get out of hand in terms of maintenance, development and monitoring. You need to keep track of all your subscribers (be it users or other services), make sure you don&#39;t exceed resources at hand, scale your services in peak times etc.</p>
+ ">
         
         <link rel="icon" type="image/png" href="/assets/images/favicon2.png" />
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
@@ -92,10 +94,10 @@
                                 
                             </ul>
                         </li>
-                        <li >
+                        <li  class="active" >
                             <a href="/blog">Blog</a>
                         </li>
-                        <li  class="active" >
+                        <li >
                             <a href="/license">License</a>
                         </li>
                     </ul>
@@ -104,61 +106,143 @@
         </header>
         <div id="content" role="main">
 
-<section class="section swatch-blue-white">
-    <div class="container">
-        <header class="section-header logo">
+            <section class="section swatch-blue-white">
+                <div class="container">
+                    <header class="section-header no-underline">
+                        <h1 class="headline"> PubSubSQL is back! </h1>
+                        <br><br>
+                        <div class="post-head small-screen-center">
+                            <span class="post-date">
+                                Published on 25 Feb 2016 
+                            </span>
+                        </div>
+                    </header>
+                </div>
+            </section>
+            <section class="section swatch-white-blue has-top">
+            <div class="decor-top">
+                <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+
+            <article class="post post-showinfo type-post status-publish format-image has-post-thumbnail hentry category-news category-web-design tag-design tag-dynamics tag-minimal post_format-post-format-image">
+                
+                <div class="post-body">
+                    <p>Few years back we were working on a project where we needed real-time synchronization of data along with storing that same data into your run-of-the-mill database. Sounds like a simple enough request, right? But there is no out-of-the-box solution! Then, as now, developers and architects usually end up constructing a complex contraption with MySQL or some other database on one side and an in-memory solution capable of PUB-SUB on the other side, like e.g. Redis. And as is usually the case -
+things get out of hand in terms of maintenance, development and monitoring. You need to keep track of all your subscribers (be it users or other services), make sure you don&#39;t exceed resources at hand, scale your services in peak times etc.</p>
+
+<p>So, even though we ended up creating that same contraption out of messaging queues, mysql and Redis, we decided to make our lives simpler - and PubSubSQL was born!</p>
+
+<p>A couple of us got together and decided to take the advantage of Go to write a PUB-SUB passthrough service that would at the same time allow SQL clients to get notified of new or updated data as well as use the usual SQL functionalities without needing to care about intricacies of distributing messages, payload or performance.</p>
+
+<p>Due to our day-jobs the project was dormant for the last year but we revisited the idea and decided to revive it. Version that is currently in front of you is basic, updated to work with latest versions of Go and MySQL but it is not production ready yet. We are working hard to improve the in-memory components and better the coupling between PSS and MySQL. Project is open-sourced so feel free to dive in and contribute! Also, please log any issues and suggestions to the Github Issues page.</p>
+
+<p>Happy hacking!</p>
+
+                </div>
+                <br><br>
+                <hr>
+                <br><br>
+                <div>
+                    <small>Share this post</small>
+                    <ul class="social-share">
+                        <li>
+                            <a href="https://twitter.com/share?url=www.pubsubsql.com/pss/2016/02/25/pss-back.html" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/share?url=www.pubsubsql.com/pss/2016/02/25/pss-back.html" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Google+">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/sharer.php?u=www.pubsubsql.com/pss/2016/02/25/pss-back.html&amp;images=www.pubsubsql.com/assets/images/uploads/" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//pinterest.com/pin/create/button/?url=www.pubsubsql.com/pss/2016/02/25/pss-back.html&amp;media=www.pubsubsql.com/assets/images/uploads/" target="_blank" data-toggle="tooltip" title="" data-original-title="Pin on Pinterest">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=www.pubsubsql.com/pss/2016/02/25/pss-back.html" target="_blank" data-toggle="tooltip" title="" data-original-title="Share on LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <br><br>
+                <div>
+                    
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'pubsubsql'; // required: replace example with your forum shortname
+  var disqus_identifier = "/pss/2016/02/25/pss-back.html";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </article>
+            </div>
+            <aside class="col-md-4 sidebar">
+    <div id="recent-posts-2" class="sidebar-widget  widget_recent_entries"><h3 class="sidebar-header">Recent Posts</h3>
+        <ul>
             
-                <h1 class="headline">
-                    License
-                </h1>
+            <li>
+                <div class="post-icon">
+                    <i class="fa fa-code"></i>
+                </div>
+                <a href="/pss/2016/02/25/pss-back.html" title="PubSubSQL is back!">PubSubSQL is back!</a>
+                <small>
+                   25 Feb 2016
+                </small>
+            </li>
             
-            
-        </header>
+        </ul>
     </div>
-</section>
-<section class="section swatch-white-blue has-top">
-    <div class="decor-top">
-        <svg class="decor" height="30%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0 C50 100 50 100 100 0  L100 100 0 100" stroke-width="0"></path>
-        </svg>
-    </div>
-    <div class="container">
-        <div class="col-md-10 col-md-offset-1">
-            <p>The PubSubSQL project is sponsored by <a href="http://www.completedb.com">CompleteDB LLC</a> and authored by <a href="mailto:oleg@completedb.com">Oleg Rabaev</a>.</p>
+</aside>
+            </div>
+            </div>
+            </section>
 
-<h1 id="license-and-attributions">License and Attributions</h1>
-
-<h5 id="license">License</h5>
-
-<p>The PubSubSQL server is licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
-
-<p>The Client APIs are licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
-
-<p>The Website content is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-
-<h5 id="attributions">Attributions</h5>
-
-<p>Portions of this Website are modifications from work created and <a href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>. Please find the original work at <a href="http://www.golang.org">golang.org</a></p>
-
-<p>The Java Client API uses the Gson Java library licensed under <a href="http://www.apache.org/licenses/">Apache License v2.0.</a></p>
     
-        </div>
-    </div>
-</section>
-<section class="section swatch-blue-white section-small"></section>
-<section class="section swatch-white-blue">
-    <div class="container">
-        <header class="section-header no-underline text-center">
-            <h1 class="headline super hairline">Get in touch!</h1>
-            <p class="custom-contact">
-                <span><i class="fa fa-envelope"></i><a href="mailto:info@pubsubsql.com">info@pubsubsql.com</a></span>
-                <span><i class="fa fa-twitter"></i>@PubSubSQL</span>
-                <span><i class="fa fa-comment"></i>groups.google.com/group/pubsubsql</span>
-            </p>
-        </header>
-        
-    </div>
-</section>
+<div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+    this.page.url = pubsubsql.com;
+    this.page.identifier = pubsubsql; 
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pubsubsql.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 </div>
 <!-- end div content -->
 <footer id="footer" role="contentinfo">

@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/code/2016/02/03/java-code-example.html</loc>
-    <lastmod>2016-02-03T14:26:34+01:00</lastmod>
-  </url>
-  <url>
-    <loc>/python/2016/02/01/python-code-example.html</loc>
-    <lastmod>2016-02-01T14:26:34+01:00</lastmod>
-  </url>
-  <url>
-    <loc>/code/2016/01/15/javascript-code-example.html</loc>
-    <lastmod>2016-01-15T14:26:34+01:00</lastmod>
+    <loc>/pss/2016/02/25/pss-back.html</loc>
+    <lastmod>2016-02-25T14:26:34+01:00</lastmod>
   </url>
   <url>
     <loc>/docs/dotNet.html</loc>
@@ -22,16 +14,13 @@
     <loc>/docs/go.html</loc>
   </url>
   <url>
-    <loc>/blog/</loc>
-  </url>
-  <url>
     <loc>/hosted-instances/</loc>
   </url>
   <url>
     <loc>/</loc>
   </url>
   <url>
-    <loc>/get-started/</loc>
+    <loc>/blog/</loc>
   </url>
   <url>
     <loc>/docs/java.html</loc>
@@ -40,15 +29,12 @@
     <loc>/license.html</loc>
   </url>
   <url>
+    <loc>/docs/nodejs.html</loc>
+  </url>
+  <url>
     <loc>/docs/python.html</loc>
   </url>
     <url>
-      <loc>/code/2016/01/15/javascript-code-example.html</loc>
-    </url>
-    <url>
-      <loc>/python/2016/02/01/python-code-example.html</loc>
-    </url>
-    <url>
-      <loc>/code/2016/02/03/java-code-example.html</loc>
+      <loc>/pss/2016/02/25/pss-back.html</loc>
     </url>
 </urlset>

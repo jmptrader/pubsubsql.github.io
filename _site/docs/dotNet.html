@@ -71,8 +71,6 @@
                                     
                                 
                                     
-                                
-                                    
                                     <li>
                                         <a href="/docs/java.html">Java Client API</a>
                                     </li>
@@ -82,10 +80,14 @@
                                 
                                     
                                     <li>
-                                        <a href="/docs/python.html">Python Client API</a>
+                                        <a href="/docs/nodejs.html">NodeJS Client API</a>
                                     </li>
                                     
                                 
+                                    
+                                    <li>
+                                        <a href="/docs/python.html">Python Client API</a>
+                                    </li>
                                     
                                 
                             </ul>
@@ -122,8 +124,58 @@
     </div>
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
-            <h5 id="this-should-be-net">This should be .Net</h5>
-    
+            <h3 id="connecting">Connecting</h3>
+
+<p>Minimal connection requires port and host.</p>
+<div class="highlight"><pre><code class="language-.net" data-lang=".net">using System;
+using PubSubSQL;
+
+PubSubSQL.Client client = new PubSubSQL.Client();
+
+string address = "localhost:7777";
+client.Connect(address);
+</code></pre></div>
+<h3 id="running-commands">Running commands</h3>
+
+<p>All commands are ran using <code>execute</code> command which accepts query as parameter.</p>
+
+<p>Function example:</p>
+<div class="highlight"><pre><code class="language-.net" data-lang=".net">client.Execute("key Stocks Ticker");
+</code></pre></div>
+<h3 id="subscribing-to-data">Subscribing to data</h3>
+
+<p>The following example sets up client connection and once the connection is ready it subscribes to changes in <code>Stocks</code> table
+when <code>MarketCap</code> value is <code>MEGA CAP</code>.</p>
+<div class="highlight"><pre><code class="language-.net" data-lang=".net">using System;
+using PubSubSQL;
+
+PubSubSQL.Client client = new PubSubSQL.Client();
+
+string address = "localhost:7777";
+client.Connect(address);
+
+client.Execute("subscribe * from Stocks where MarketCap = 'MEGA CAP'");
+string pubsubid = client.PubSubId;
+Console.WriteLine("subscribed to Stocks pubsubid: {0}", pubsubid);
+
+int timeout = 100;
+
+while (client.WaitForPubSub(timeout))
+{
+    Console.WriteLine("*********************************");
+    Console.WriteLine("Action:{0}", client.Action);
+    while (client.NextRow())
+    {
+        int ordinal = 0;
+        foreach (string column in client.Columns)
+        {
+          Console.Write("{0}:{1} ", column, client.GetValue(ordinal));
+          ordinal++;
+        }
+        Console.WriteLine();
+    }
+}
+</code></pre></div>    
         </div>
     </div>
 </section>

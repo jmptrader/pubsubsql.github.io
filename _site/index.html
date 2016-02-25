@@ -71,8 +71,6 @@
                                     
                                 
                                     
-                                
-                                    
                                     <li>
                                         <a href="/docs/java.html">Java Client API</a>
                                     </li>
@@ -82,10 +80,14 @@
                                 
                                     
                                     <li>
-                                        <a href="/docs/python.html">Python Client API</a>
+                                        <a href="/docs/nodejs.html">NodeJS Client API</a>
                                     </li>
                                     
                                 
+                                    
+                                    <li>
+                                        <a href="/docs/python.html">Python Client API</a>
+                                    </li>
                                     
                                 
                             </ul>
@@ -112,7 +114,7 @@
             
             
                 <p>
-                    An open-source in-memory database integrated with Publish-Subscribe - Ver. 1.2.0
+                    An open-source in-memory database integrated with Publish-Subscribe
                 </p>
             
         </header>
@@ -228,9 +230,71 @@
 
         
         <ol>
-<li><p>Once you&#39;re set up just clone <a href="our%20server%20repo">https://github.com/pubsubsql/pubsubsql</a> and build:</p>
+<li><p>Once you&#39;re set up just get and run the server:</p>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>go get github.com/pubsubsql/pubsubsql
+<span class="gp">$ </span><span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/pubsubsql/pubsubsql <span class="o">&amp;&amp;</span> go build <span class="o">&amp;&amp;</span> pubsubsql
 </code></pre></div></li>
+<li><p>Once server is running you can start coding your simple publisher:</p>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="s">"fmt"</span><span class="x">
+    </span><span class="s">"github.com/pubsubsql/client"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">publisher</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="nb">new</span><span class="p">(</span><span class="n">pubsubsql</span><span class="o">.</span><span class="n">Client</span><span class="p">)</span><span class="x">
+    </span><span class="n">address</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"localhost:7777"</span><span class="x">
+    </span><span class="n">publisher</span><span class="o">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">address</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">publisher</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="s">"key Stocks Ticker"</span><span class="p">)</span><span class="x">
+    </span><span class="n">publisher</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="s">"tag Stocks MarketCap"</span><span class="p">)</span><span class="x">
+    </span><span class="n">publisher</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="s">"insert into Stocks (Ticker, Price, MarketCap) values (GOOG, '1,200.22', 'MEGA CAP')"</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Msg published!"</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre></div></li>
+<li><p>And here&#39;s the code for simple subscriber:</p>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="s">"fmt"</span><span class="x">
+    </span><span class="s">"github.com/pubsubsql/client"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">subscriber</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="nb">new</span><span class="p">(</span><span class="n">pubsubsql</span><span class="o">.</span><span class="n">Client</span><span class="p">)</span><span class="x">
+    </span><span class="n">address</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"localhost:7777"</span><span class="x">
+    </span><span class="n">subscriber</span><span class="o">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">address</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">subscriber</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="s">"subscribe * from Stocks where MarketCap = 'MEGA CAP'"</span><span class="p">)</span><span class="x">
+    </span><span class="n">pubsubid</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">subscriber</span><span class="o">.</span><span class="n">PubSubId</span><span class="p">()</span><span class="x">
+
+    </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"subscribed to Stocks pubsubid:"</span><span class="p">,</span><span class="x"> </span><span class="n">pubsubid</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">timeout</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="m">100</span><span class="x">
+    </span><span class="n">subscriber</span><span class="o">.</span><span class="n">WaitForPubSub</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span><span class="x">
+
+    </span><span class="k">var</span><span class="x"> </span><span class="n">action</span><span class="x"> </span><span class="kt">string</span><span class="x">
+    </span><span class="k">for</span><span class="x"> </span><span class="p">{</span><span class="x">
+        </span><span class="n">action</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">subscriber</span><span class="o">.</span><span class="n">Action</span><span class="p">()</span><span class="x">
+        </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Action:"</span><span class="p">,</span><span class="x"> </span><span class="n">action</span><span class="p">)</span><span class="x">
+
+        </span><span class="k">for</span><span class="x"> </span><span class="p">{</span><span class="x">
+            </span><span class="n">more</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">subscriber</span><span class="o">.</span><span class="n">NextRow</span><span class="p">()</span><span class="x">
+
+            </span><span class="k">for</span><span class="x"> </span><span class="n">ordinal</span><span class="p">,</span><span class="x"> </span><span class="n">column</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">range</span><span class="x"> </span><span class="n">subscriber</span><span class="o">.</span><span class="n">Columns</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+                </span><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s:%s "</span><span class="p">,</span><span class="x"> </span><span class="n">column</span><span class="p">,</span><span class="x"> </span><span class="n">subscriber</span><span class="o">.</span><span class="n">ValueByOrdinal</span><span class="p">(</span><span class="n">ordinal</span><span class="p">))</span><span class="x">
+            </span><span class="p">}</span><span class="x">
+            </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="x">
+            </span><span class="k">if</span><span class="x"> </span><span class="o">!</span><span class="n">more</span><span class="x"> </span><span class="p">{</span><span class="x">
+                </span><span class="k">break</span><span class="x">
+            </span><span class="p">}</span><span class="x">
+        </span><span class="p">}</span><span class="x">
+    </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre></div></li>
+<li><p>Profit!</p></li>
 </ol>
 
 
@@ -240,7 +304,7 @@
             <div class="text-center">
                 <div class="text-center">
                     <a href="/getting-started" class="btn btn-info btn-lg  btn-icon-right" target="_self">
-                     Getting started now!<span class="hex-alt"><i class="fa fa-rocket"></i></span>
+                     Get started now!<span class="hex-alt"><i class="fa fa-rocket"></i></span>
                  </a>
              </div>
          </div>
