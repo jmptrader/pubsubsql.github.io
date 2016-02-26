@@ -28,8 +28,8 @@ Portions of this Website are modifications from work created and [shared by Goog
 The Java Client API uses the Gson Java library licensed under [Apache License v2.0.]
 
   [CompleteDB LLC]: http://www.completedb.com
-  [Oleg Rabaev]: mailto:oleg@completedb.com
+  [Oleg Rabaev]: mailto:info@pubsubsql.com
   [Apache License v2.0.]: http://www.apache.org/licenses/
   [Creative Commons Attribution 3.0 License.]: http://creativecommons.org/licenses/by/3.0/
-  [shared by Google]: http://code.google.com/policies.html
+  [shared by Google]: https://golang.org/LICENSE
   [golang.org]: http://www.golang.org
