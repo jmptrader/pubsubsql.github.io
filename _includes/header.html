@@ -16,7 +16,7 @@
         <meta name="twitter:image" content="{{site.featured_image}}">
 
         <!-- Open Graph data -->
-        <meta property="og:title" content="{{page.title}}" />
+        <meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{page.heading}}{% endif%}" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="http://pubsubsql.com/" />
         <meta property="og:image" content="{% if page.featured_image %}{{page.featured_image}}{% else %}{{site.featured_image}}{% endif %}" />
