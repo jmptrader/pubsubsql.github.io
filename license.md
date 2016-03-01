@@ -4,7 +4,7 @@ title: License | PubSubSQL
 heading: License
 <!-- description: An open-source in-memory database integrated with Publish-Subscribe - Ver. 1.2.0 -->
 active: license
-excerpt: "A simple and clean responsive Jekyll theme for words and photos."
+excerpt: "An open-source in-memory database integrated with Publish-Subscribe and MySQL"
 search_omit: true
 ---
 
