@@ -1,9 +1,10 @@
 ---
 layout: get-started
-title: NodeJS docs | PubSubSQL
+title: NodeJS docs
 heading: NodeJS Client API
 active: docs
 excerpt: "Documentation for NodeJS language"
+meta_description: 
 search_omit: true
 ---
 

@@ -1,9 +1,10 @@
 ---
 layout: get-started
-title: Java docs | PubSubSQL
+title: Java docs
 heading: Java Client API
 active: docs
 excerpt: "Documentation for Java language"
+meta_description: 
 search_omit: true
 ---
 

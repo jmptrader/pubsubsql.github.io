@@ -1,10 +1,11 @@
 ---
 layout: get-started
-title: License | PubSubSQL
+title: License
 heading: License
 <!-- description: An open-source in-memory database integrated with Publish-Subscribe - Ver. 1.2.0 -->
 active: license
 excerpt: "An open-source in-memory database integrated with Publish-Subscribe and MySQL"
+meta_description: 
 search_omit: true
 ---
 

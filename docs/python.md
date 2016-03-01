@@ -1,9 +1,10 @@
 ---
 layout: get-started
-title: Python docs | PubSubSQL
+title: Python docs
 heading: Python Client API
 active: docs
 excerpt: "Documentation for Python language"
+meta_description: 
 search_omit: true
 ---
 

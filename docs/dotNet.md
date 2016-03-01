@@ -1,9 +1,10 @@
 ---
 layout: get-started
-title: .Net docs | PubSubSQL
+title: .Net docs
 heading: .Net Client API
 active: docs
 excerpt: "Documentation for .Net language"
+meta_description: 
 search_omit: true
 ---
 

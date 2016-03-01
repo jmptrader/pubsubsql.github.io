@@ -1,9 +1,10 @@
 ---
 layout: get-started
-title: Go docs | PubSubSQL
+title: Go docs
 heading: Go Client API
 active: docs
 excerpt: "Documentation for Go language"
+meta_description: 
 search_omit: true
 ---
 

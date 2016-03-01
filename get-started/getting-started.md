@@ -1,10 +1,11 @@
 ---
 layout: get-started
 permalink: getting-started
-title: Getting started | PubSubSQL
+title: Getting started
 heading: Getting started with PubSubSQL
 active: get-started
 excerpt: "Getting started instructions"
+meta_description: You can either run the server on your machine or you can use our publicly available playground server for testing purposes. If you use the public server keep in mind anyone can connect so don't put any confidential/private data into the database
 search_omit: true
 ---
 

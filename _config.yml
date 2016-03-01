@@ -6,6 +6,11 @@ description: Describe your website here.
 search: true
 share-url: "www.pubsubsql.com"
 include: ['docs','get-started']
+featured_image: "http://pubsubsql.com/assets/images/flow.png"
+
+# social media
+social_twitter: PubSubSQL
+
 
 # Jekyll configuration
 paginate_path: "/blog/page:num/"
