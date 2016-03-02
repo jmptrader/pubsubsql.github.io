@@ -1,74 +1,93 @@
-1. Once you're set up just get and run the server:
+1. You don't even have to run the server! You can use the one publicly available for testing at [public.pubsubsql.com](public.pubsubsql.com). If you do want to run the server, just do the following:
 
     ```shell
     $ go get github.com/pubsubsql/pubsubsql
     $ cd $GOPATH/src/github.com/pubsubsql/pubsubsql && go build && pubsubsql
     ```
     
-3. Once server is running you can start coding your simple publisher:
+3. Once server is running (or you use the public one) you can start coding your simple publisher:
 
     ```go
-    package main
+package main
 
-    import (
-    	"fmt"
-    	"github.com/pubsubsql/client"
-    )
+import (
+	"fmt"
+	"math/rand"
+	"time"
 
-    func main() {
-    	publisher := new(pubsubsql.Client)
-	    address := "localhost:7777"
-	    publisher.Connect(address)
+	"github.com/pubsubsql/client"
+)
 
-    	publisher.Execute("key Stocks Ticker")
-	    publisher.Execute("tag Stocks MarketCap")
-	    publisher.Execute("insert into Stocks (Ticker, Price, MarketCap) values (GOOG, '1,200.22', 'MEGA CAP')")
+func CheckError(err error) {
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+}
 
-	    fmt.Println("Msg published!")
-    }
+func main() {
+	publisher := new(pubsubsql.Client)
+	address := "public.pubsubsql.com:7777"
+	publisher.Connect(address)
+
+	publisher.Execute("key Stocks Ticker")
+	publisher.Execute("tag Stocks MarketCap")
+	publisher.Execute("insert into Stocks (Ticker, Price, MarketCap) values (GOOG, '1,2002d.22', 'MEGA CAP')")
+
+	for {
+		time.Sleep(300 * time.Millisecond)
+		CheckError(publisher.Execute(fmt.Sprintf("update Stocks set Price='%f' where Ticker='GOOG'", 10000.0*rand.Float64())))
+	}
+
+	fmt.Println("Msg published!")
+}
     ```
     
 4. And here's the code for simple subscriber:
 
     ```go
-    package main
+package main
 
-    import (
-	    "fmt"
-	    "github.com/pubsubsql/client"
-    )
-    
-    func main() {
-	    subscriber := new(pubsubsql.Client)
-	    address := "localhost:7777"
-	    subscriber.Connect(address)
+import (
+	"fmt"
+	"github.com/pubsubsql/client"
+)
 
-	    subscriber.Execute("subscribe * from Stocks where MarketCap = 'MEGA CAP'")
-	    pubsubid := subscriber.PubSubId()
+func main() {
+	subscriber := new(pubsubsql.Client)
+	address := "public.pubsubsql.com:7777"
+	subscriber.Connect(address)
 
-	    fmt.Println("subscribed to Stocks pubsubid:", pubsubid)
+	subscriber.Execute("subscribe * from Stocks where MarketCap = 'MEGA CAP'")
+	pubsubid := subscriber.PubSubId()
 
-	    timeout := 100
-	    subscriber.WaitForPubSub(timeout)
+	fmt.Println("subscribed to Stocks pubsubid:", pubsubid)
 
-	    var action string
-	    for {
-		    action = subscriber.Action()
-		    fmt.Println("Action:", action)
+	// timeout after a minute of no data
+	timeout := 60000
 
-		    for {
-			    more := subscriber.NextRow()
+	var action string
+	for {
+		subscriber.WaitForPubSub(timeout)
+		action = subscriber.Action()
+		fmt.Println("Action:", action)
 
-			    for ordinal, column := range subscriber.Columns() {
-				    fmt.Printf("%s:%s ", column, subscriber.ValueByOrdinal(ordinal))
-			    }
-			    fmt.Println("")
-			    if !more {
-				    break
-			    }
-		    }
-	    }
-    }
+		for {
+			more, err := subscriber.NextRow()
+			if err != nil {
+				fmt.Println(err.Error())
+				break
+			} else if more == false {
+				break
+			}
+
+			for ordinal, column := range subscriber.Columns() {
+				fmt.Printf("%s:%s ", column, subscriber.ValueByOrdinal(ordinal))
+			}
+			fmt.Println("")
+
+		}
+	}
+}
     ```
     
 5. Profit!
