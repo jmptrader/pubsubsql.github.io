@@ -25,7 +25,7 @@ redcarpet:
 
 mathjax: true
 
-paginate: 2
+paginate: 10
 
 
 # Default extensions
