@@ -14,14 +14,15 @@ social_twitter: PubSubSQL
 
 # Jekyll configuration
 paginate_path: "/blog/page:num/"
-markdown: redcarpet
+markdown: kramdown
+highlighter: rouge
 
 gems:
   - jekyll-sitemap
   - jekyll-paginate
 
-redcarpet:
-  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
 
 mathjax: true
 
